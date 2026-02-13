@@ -1,6 +1,6 @@
-# obsidian-scripts
+# templater-scripts.ts
 
-TypeScript-based user scripts for the Obsidian Templater plugin, built with Bun and Vite.
+TypeScript-based user scripts for the Obsidian Templater plugin.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ bun install
 
 ## Build scripts
 
-Build all Templater scripts into the `compiled` directory:
+Build all Templater scripts from [user-scripts](./user-scripts/) into the [compiled](./compiled/) directory:
 
 ```bash
 bun run build
@@ -23,12 +23,11 @@ bun run build
 
 This produces CommonJS files that can be used as Templater user scripts.
 
-Example: `add-default-properties.ts` → `compiled/add-default-properties.js`.
+Example: `user-scripts/add-default-properties.ts` → `compiled/add-default-properties.js`.
 
 ## TypeScript typings
 
 - Obsidian types are provided by the official `obsidian` package.
-- Templater `tp` API is described in `types/templater.d.ts` and is based on:
+- Templater `tp` API is described in [types/templater.d.ts](./types/templater.d.ts) and is based on:
   - Templater repo: `https://github.com/SilentVoid13/Templater`
   - Templater docs: `https://silentvoid13.github.io/Templater/`
-

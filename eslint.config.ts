@@ -14,6 +14,22 @@ export default defineConfig([
     },
     rules: {
       "prettier/prettier": "error",
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports", disallowTypeAnnotations: false },
+      ],
+      "@typescript-eslint/no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "obsidian",
+              allowTypeImports: true,
+              message: "Do not import 'obsidian' at runtime. Use `tp.obsidian` instead.",
+            },
+          ],
+        },
+      ],
     },
   },
 ]);

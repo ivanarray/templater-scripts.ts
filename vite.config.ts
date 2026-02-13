@@ -1,6 +1,8 @@
 import { readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import typescript from "@rollup/plugin-typescript";
 import path from "path";
 
 function getScriptEntries() {
@@ -31,4 +33,6 @@ export default defineConfig({
       external: ["obsidian"],
     },
   },
+  plugins: [tsconfigPaths(), typescript({ removeComments: false, declaration: false })],
+  esbuild: false,
 });
